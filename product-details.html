@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGROASTERY - Product Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product-details.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Reuse your existing nav from catalog.html -->
+    <nav>
+        <!-- Your nav content -->
+    </nav>
+
+    <main class="product-details-container">
+        <!-- Left Column - Images -->
+        <div class="product-images">
+            <div class="main-image">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Standard Gayo Arabica">
+            </div>
+            <div class="thumbnail-grid">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Thumbnail 1" class="active">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Thumbnail 2">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Thumbnail 3">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Thumbnail 4">
+            </div>
+        </div>
+
+        <!-- Center Column - Product Info -->
+        <div class="product-info">
+            <h1>STANDARD GAYO ARABICA</h1>
+            <div class="price">Rp 120.000</div>
+            
+            <!-- Variant Selections -->
+            <div class="variant-section">
+                <h3>Roast Level</h3>
+                <div class="variant-options">
+                    <button class="variant-btn active">Light Roast</button>
+                    <button class="variant-btn">Medium Roast</button>
+                    <button class="variant-btn">Dark Roast</button>
+                </div>
+            </div>
+
+            <div class="variant-section">
+                <h3>Grind Size</h3>
+                <div class="variant-options">
+                    <button class="variant-btn active">Whole Bean</button>
+                    <button class="variant-btn">Fine</button>
+                    <button class="variant-btn">Medium</button>
+                    <button class="variant-btn">Coarse</button>
+                </div>
+            </div>
+
+            <div class="product-description">
+                <h3>Description</h3>
+                <p>Arabica semi-washed dari 1600 mdpl, ideal untuk espresso dan latte dengan body ringan, sweetness tinggi dan acidity rendah.</p>
+            </div>
+        </div>
+
+        <!-- Right Column - Order Summary -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="selected-variants">
+                <div class="variant-item">
+                    <span>Roast Level:</span>
+                    <span class="selected-value">Light Roast</span>
+                </div>
+                <div class="variant-item">
+                    <span>Grind Size:</span>
+                    <span class="selected-value">Whole Bean</span>
+                </div>
+            </div>
+
+            <div class="quantity-selector">
+                <button class="qty-btn minus">-</button>
+                <input type="number" value="1" min="1" max="99">
+                <button class="qty-btn plus">+</button>
+            </div>
+
+            <div class="total-price">
+                <span>Total</span>
+                <span class="price">Rp 120.000</span>
+            </div>
+
+            <div class="action-buttons">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

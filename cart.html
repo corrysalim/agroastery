@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGROASTERY - Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Reuse your existing nav -->
+    <nav>
+        <div class="nav-brand">
+            <img src="assets/svgs/ag-logogram.svg" alt="ag-logogram">
+            <p class="logotype">AGROASTERY</p>
+        </div>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <!-- Your nav links -->
+        </div>
+    </nav>
+
+    <main class="cart-container">
+        <!-- Left Column - Cart Items -->
+        <div class="cart-items">
+            <div class="cart-card">
+                <input type="checkbox" class="cart-checkbox">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Standard Gayo Arabica">
+                <div class="cart-item-info">
+                    <div class="item-header">
+                        <h3>STANDARD GAYO ARABICA</h3>
+                        <div class="price">Rp 120.000</div>
+                    </div>
+                    <p class="variants">Light Roast, Whole Bean</p>
+                    <div class="item-actions">
+                        <button class="trash-btn">
+                            <img src="assets/svgs/trash.svg" alt="Remove item">
+                        </button>
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" value="1" min="1" max="99">
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat cart-card for more items -->
+        </div>
+
+        <!-- Right Column - Cart Summary -->
+        <div class="cart-summary">
+            <h2>Cart Summary</h2>
+            <div class="summary-item">
+                <span>Subtotal (3 items)</span>
+                <span class="price">Rp 360.000</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </main>
+</body>
+</html>
