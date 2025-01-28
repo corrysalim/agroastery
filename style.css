@@ -31,7 +31,13 @@ body {
 
 /* -------------------- Typography Base -------------------- */
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
     color: #F5EBC9;
 }
 
@@ -64,7 +70,7 @@ h4 {
 }
 
 /* opinion title */
-h6 { 
+h6 {
     /* 10px and 700 by default */
     color: #CCC4A9;
 }
@@ -131,22 +137,29 @@ a:hover {
 
 /* -------------------- Navigation -------------------- */
 
-nav {
+.page-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    height: 64px;
-    padding: 0 64px;
     z-index: 100;
     background: transparent;
     transition: background-color 0.3s ease;
 }
 
-nav.scrolled {
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    padding: 0 64px;
+}
+
+.page-header.scrolled {
     background-color: rgba(26, 26, 26, 0.2);
     backdrop-filter: blur(8px);
 }
@@ -202,8 +215,13 @@ nav.scrolled {
     transition: all 0.3s ease;
 }
 
-.hamburger span:nth-child(1) { top: 16px; }
-.hamburger span:nth-child(2) { bottom: 16px; }
+.hamburger span:nth-child(1) {
+    top: 16px;
+}
+
+.hamburger span:nth-child(2) {
+    bottom: 16px;
+}
 
 /* X Animation when active */
 .hamburger.active span:nth-child(1) {
@@ -220,15 +238,12 @@ nav.scrolled {
 
 .hero-section {
     background-image: url(assets/images/hero-bg.jpg);
-    background-size:cover;
+    background-size: cover;
     /* background-position: 25% 0%; */
     /* background-size: cover; */
     /* object-position: 20%; */
-    
     /* overflow-clip-margin: content-box; */
     /* overflow: clip; */
-    
-
     /* background-repeat: no-repeat; */
     /* width: 100%; */
     height: 100vh;
@@ -355,13 +370,14 @@ nav.scrolled {
 /* ---------------------------------------- Tablet ---------------------------------------- */
 
 @media screen and (min-width: 810px) and (max-width: 1023px) {
+
     nav {
         padding: 0 32px;
     }
 
     .hero-section {
         padding: 32px;
-        background-size:auto;
+        background-size: auto;
         background-position: 25% 0%;
     }
 
@@ -410,7 +426,7 @@ nav.scrolled {
         background: #1A1A1A;
         transition: none;
     }
-    
+
     .desktop-links {
         display: none;
     }
@@ -435,7 +451,7 @@ nav.scrolled {
         background: #1A1A1A;
         flex-direction: column;
         padding: 0 24px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links-container.active {
@@ -456,7 +472,7 @@ nav.scrolled {
 
     .hero-section {
         padding: 24px;
-        background-size:auto;
+        background-size: auto;
         background-position: 25% 0%;
     }
 
