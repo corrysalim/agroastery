@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGROASTERY - Product Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product-details.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="catalog-header">
+        <nav>
+            <a href="index.html">
+            <div class="nav-brand">
+                <img src="assets/svgs/ag-logogram.svg" alt="ag-logogram">
+                <p class="logotype">AGROASTERY</p>
+            </div>
+            </a>
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links-container">
+                <a class="desktop-links" href="https://www.tokopedia.com/agroastery" target="_blank" rel="noopener noreferrer">Tokopedia</a>
+                <a class="desktop-links" href="https://api.whatsapp.com/send?phone=628979092726" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+                <a class="mobile-links" href="catalog.html_blank" rel="noopener noreferrer">Katalog</a>
+                <a class="mobile-links" href="https://www.tokopedia.com/agroastery" target="_blank" rel="noopener noreferrer">Tokopedia</a>
+                <a class="mobile-links" href="https://shopee.co.id/agroastery" target="_blank" rel="noopener noreferrer">Shopee</a>
+                <a class="mobile-links" href="https://api.whatsapp.com/send?phone=628979092726" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a class="mobile-links" href="https://t.me/agroastery" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <a class="mobile-links" href="https://www.instagram.com/agroastery/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a class="mobile-links" href="https://www.tiktok.com/@agroastery" target="_blank" rel="noopener noreferrer">Tiktok</a>
+                <a class="mobile-links" href="https://tokopedia.link/zgnhwfsWtPb" target="_blank" rel="noopener noreferrer">Double Espresso</a>
+                <a class="mobile-links" href="https://docs.google.com/forms/d/e/1FAIpQLSfLp_b2qqdDm_tZ4OQuVuosyWSLYb6xJV6J2_Nhyn_sz4qe_g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Lowongan Kerja</a>
+            </div>
+        </nav>
+
+    </header>
+    <!-- Reuse your existing nav from catalog.html -->
+
+    <main class="product-details-container">
+        <!-- Left Column - Images -->
+        <div class="product-images">
+            <div class="main-image">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Standard Gayo Arabica">
+            </div>
+            <div class="thumbnail-grid">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Thumbnail 1" class="active">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Thumbnail 2">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Thumbnail 3">
+                <img src="assets/images/standard-gayo-arabica.png" alt="Thumbnail 4">
+            </div>
+        </div>
+
+        <!-- Center Column - Product Info -->
+        <div class="product-info">
+            <h1>STANDARD GAYO ARABICA</h1>
+            <div class="price">Rp 120.000</div>
+            
+            <!-- Variant Selections -->
+            <div class="variant-section">
+                <h3>Roast Level</h3>
+                <div class="variant-options">
+                    <button class="variant-btn active">Light Roast</button>
+                    <button class="variant-btn">Medium Roast</button>
+                    <button class="variant-btn">Dark Roast</button>
+                </div>
+            </div>
+
+            <div class="variant-section">
+                <h3>Grind Size</h3>
+                <div class="variant-options">
+                    <button class="variant-btn active">Whole Bean</button>
+                    <button class="variant-btn">Fine</button>
+                    <button class="variant-btn">Medium</button>
+                    <button class="variant-btn">Coarse</button>
+                </div>
+            </div>
+
+            <div class="product-description">
+                <h3>Description</h3>
+                <p>Arabica semi-washed dari 1600 mdpl, ideal untuk espresso dan latte dengan body ringan, sweetness tinggi dan acidity rendah.</p>
+            </div>
+        </div>
+
+        <!-- Right Column - Order Summary -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="selected-variants">
+                <div class="variant-item">
+                    <span>Roast Level:</span>
+                    <span class="selected-value">Light Roast</span>
+                </div>
+                <div class="variant-item">
+                    <span>Grind Size:</span>
+                    <span class="selected-value">Whole Bean</span>
+                </div>
+            </div>
+
+            <div class="quantity-selector">
+                <button class="qty-btn minus">-</button>
+                <input type="number" value="1" min="1" max="99">
+                <button class="qty-btn plus">+</button>
+            </div>
+
+            <div class="total-price">
+                <span>Total</span>
+                <span class="price">Rp 120.000</span>
+            </div>
+
+            <div class="action-buttons">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
