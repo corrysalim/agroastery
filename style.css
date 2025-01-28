@@ -164,6 +164,10 @@ nav {
     backdrop-filter: blur(8px);
 }
 
+.page-header.nav-active {
+    background-color: #1A1A1A;
+}
+
 .nav-brand {
     display: flex;
     align-items: center;

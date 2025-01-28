@@ -1,30 +1,8 @@
-/* Base Layout */
+
+/* Dektop Base Layout --------------------------------------------------------------------------------------------------- */
+
 .hamburger {
     display: block;
-}
-
-.nav-links-container {
-    display: none;
-}
-
-.nav-links-container.active {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background: #1A1A1A;
-    padding: 0 64px 64px 64px;
-    gap: 0;
-}
-
-.nav-links-container a {
-    width: 100%;
-    height: 56px;
-    border-bottom: 1px solid rgba(245, 235, 201, 0.25);
-    display: flex;
-    align-items: center;
 }
 
 .catalog-section {
@@ -32,22 +10,26 @@
     gap: 32px;
     padding: 64px;
     margin-top: 24px;
+    /* Account for fixed navbar */
 }
 
-/* Desktop Categories Sidebar */
+/* Categories Sidebar ------------------------------ */
 .desktop-categories {
     width: 240px;
     height: fit-content;
+    /* flex-shrink: 0; */
     padding: 24px;
     background: #242424;
     border-radius: 16px;
     position: sticky;
+    /* Optional: keep it visible while scrolling */
     top: 88px;
+    /* Account for navbar height + some spacing */
 }
 
 .desktop-categories h2 {
-    font-size: 24px;
     margin-bottom: 24px;
+    font-size: 24px;
 }
 
 .desktop-categories ul {
@@ -55,6 +37,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    white-space: nowrap;
 }
 
 .desktop-categories a {
@@ -70,7 +53,7 @@
     color: #1A1A1A;
 }
 
-/* Products Grid */
+/* Products Grid ----------------------------------------------- */
 .products-grid {
     flex: 1;
     display: grid;
@@ -78,11 +61,12 @@
     gap: 24px;
 }
 
-/* Product Cards */
+/* Product Card ------------ */
 .product-card {
     background: #242424;
     border-radius: 16px;
     overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .product-card img {
@@ -94,6 +78,7 @@
 .product-info {
     padding: 24px;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     gap: 8px;
 }
@@ -104,6 +89,9 @@
     height: 40px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    /* Limits text to 2 lines */
+    line-clamp: 2;
+    /* Standard property */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -114,9 +102,16 @@
     height: 40px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    /* Limits text to 2 lines */
+    line-clamp: 2;
+    /* Standard property */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.product-info a {
+    margin-left: auto;
 }
 
 .price-and-cta {
@@ -129,33 +124,27 @@
     font-weight: 600;
 }
 
-/* Categories Filter (Mobile/Tablet) */
-.filter-wrapper {
-    width: 100%;
-    padding: 0;
-    transition: all 0.3s ease;
-}
 
-.categories-filter {
+/* Filter categories-toggle --------------------------------- */
+.categories-toggle {
     display: none;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
     padding: 8px 16px;
     width: 100%;
-    background: rgba(245, 235, 201, 0.10);
+    background: transparent;
     border: 0.5px solid #F5EBC9;
     border-radius: 24px;
     color: #F5EBC9;
     cursor: pointer;
 }
 
-.categories-filter img {
+.categories-toggle img {
     width: 16px;
     height: 16px;
 }
 
-/* Categories Overlay */
+/* Filter categories active ----------------------------------- */
 .categories-overlay {
     display: none;
     position: fixed;
@@ -165,27 +154,19 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.50);
     z-index: 999;
-    height: 100vh;
 }
 
 .categories-overlay.active {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    display: block;
 }
 
 .categories-modal {
-    position: sticky;
-    bottom: 0;
+    position:fixed;
     left: 0;
     right: 0;
+    bottom: 0;
     padding: 0 24px 24px 24px;
     background-color: #1A1A1A;
-    transition: transform 0.3s ease;
-}
-
-.categories-modal a {
-    border-bottom: 1px solid rgba(245, 235, 201, 0.25);
 }
 
 .categories-modal h2 {
@@ -200,6 +181,7 @@
 .categories-modal .close-btn {
     background: none;
     border: none;
+    /* padding: 8px; */
     cursor: pointer;
 }
 
@@ -212,6 +194,7 @@
     list-style: none;
     display: flex;
     flex-direction: column;
+    /* gap: 16px; */
 }
 
 .categories-modal a {
@@ -219,6 +202,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 18px 0;
+    border-bottom: #F5EBC9;
     transition: all 0.3s ease;
 }
 
@@ -228,49 +212,55 @@
     height: 24px;
 }
 
+/* .categories-modal a:hover, */
 .categories-modal a.active {
     color: #F5EBC9;
+    /* color: #1A1A1A; */
 }
 
 .categories-modal a.active img {
     display: block;
 }
 
-/* Media Queries */
-@media screen and (max-width: 1023px) {
+/* Modify the products grid for different screen sizes */
+.products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* ---------------------------------------- Tablet ---------------------------------------- */
+
+@media screen and (min-width: 810px) and (max-width: 1023px) {
+
+
+    .toggle-wrapper {
+        width: 100%;
+        padding: 8px 32px;
+    }
+    
+    .toggle-wrapper.hidden {
+        display: none;
+        pointer-events: none;
+    }
+
+    .desktop-links {
+        display: none;
+    }
+
     .desktop-categories {
         display: none;
     }
 
-    .categories-filter {
+    .categories-toggle {
         display: flex;
     }
 
     .catalog-section {
-        margin-top: 112px;
-    }
-
-    .filter-wrapper {
-        padding: 8px 24px;
-    }
-
-    .filter-wrapper.hidden {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 810px) and (max-width: 1023px) {
-    .nav-links-container.active {
-        padding: 0 32px 32px 32px;
-    }
-
-    .filter-wrapper {
-        padding: 8px 32px;
-    }
-
-    .catalog-section {
+        display: flex;
         gap: 32px;
         padding: 32px;
+        margin-top: 112px;
+        /* Account for fixed navbar */
     }
 
     .products-grid {
@@ -279,14 +269,35 @@
     }
 }
 
+/* ---------------------------------------- Mobile ---------------------------------------- */
+
 @media screen and (max-width: 809px) {
-    .nav-links-container.active {
-        padding: 0 24px 24px 24px;
+
+    .toggle-wrapper {
+        width: 100%;
+        padding: 8px 24px;
+    }
+
+    .toggle-wrapper.hidden {
+        display: none;
+        pointer-events: none;
+    }
+
+    .categories-toggle {
+        display: flex;
+        width: 100%;
+    }
+
+    .desktop-categories {
+        display: none;
     }
 
     .catalog-section {
+        display: flex;
         gap: 8px;
         padding: 24px;
+        margin-top: 112px;
+        /* Account for fixed navbar */
     }
 
     .products-grid {
@@ -299,7 +310,16 @@
     }
 
     .product-info p {
+        font-size: 13px;
         height: 64px;
+        display: -webkit-box;
         -webkit-line-clamp: 3;
+        /* Limits text to 3 lines */
+        line-clamp: 3;
+        /* Standard property */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
+
 }
