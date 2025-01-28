@@ -84,7 +84,7 @@
 .product-info h3 {
     font-size: 14px;
     line-height: 1.6;
-    height: 48px;
+    height: 40px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     /* Limits text to 2 lines */
@@ -96,9 +96,16 @@
 }
 
 .product-info p {
-
     font-size: 13px;
-    min-height: 72px;
+    height: 64px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Limits text to 2 lines */
+    line-clamp: 3;
+    /* Standard property */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product-info a {
@@ -273,11 +280,8 @@
         gap: 16px;
     }
 
-    /* .product-info {
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    } */
+    .product-info {
+        padding: 12px;
+    }
 
 }
