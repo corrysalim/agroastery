@@ -43,6 +43,8 @@
     gap: 32px;
     padding: 32px 64px;
     margin-top: 64px;
+    min-height: 100vh;
+    align-items: start;
 }
 
 /* Back Navigation */
@@ -107,7 +109,7 @@
     width: 80px;
     height: 80px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     opacity: 0.6;
     transition: opacity 0.3s ease;
@@ -119,30 +121,70 @@
     opacity: 1;
 }
 
-/* Center Column - Product Info */
+.thumbnail-grid img.active {
+    border: 0.5px solid #F5EBC9;
+}
+
+/* Center Column - Product Info Desktop */
+
 .product-info {
-    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.title-and-price-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .product-info h1 {
     font-size: 24px;
-    margin-bottom: 16px;
-    line-height: 1.4;
+    font-weight: 300;
+    line-height: 1.6;
+    /* margin-bottom: 16px; */
 }
 
-.price {
-    font-size: 24px;
-    color: #F5EBC9;
-    margin-bottom: 32px;
+.desktop-price {
+    font-size: 32px;
+    font-weight: 600;
+    color: #CCC4A9;
+    /* margin-bottom: 56px; */
+}
+
+.mobile-price {
+    display: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #CCC4A9;
+    /* margin-bottom: 16px; */
+}
+
+.variants-kategori-description-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.variants-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .variant-section {
-    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .variant-section h3 {
     font-size: 14px;
-    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #CCC4A9;
+    /* margin-bottom: 8px; */
 }
 
 .variant-options {
@@ -153,7 +195,7 @@
 
 .variant-btn {
     padding: 8px 16px;
-    border: 1px solid #F5EBC9;
+    border: 0.5px solid #F5EBC9;
     border-radius: 24px;
     background: transparent;
     color: #F5EBC9;
@@ -162,39 +204,54 @@
 }
 
 .variant-btn.active {
-    background: #F5EBC9;
-    color: #1A1A1A;
+    background: rgba(245, 235, 201, 0.10);
+    color: #F5EBC9;
 }
 
 .kategori {
-    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .kategori h3 {
     font-size: 14px;
-    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #CCC4A9;
+    /* margin-bottom: 8px; */
 }
 
 .kategori a {
+    font-size: 14px;
+    font-weight: 200;
     color: #F5EBC9;
     text-decoration: underline;
 }
 
 .description {
-    margin: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .description h3 {
     font-size: 14px;
-    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #CCC4A9;
+    /* margin-bottom: 8px; */
 }
 
 .description p {
-    margin: 16px 0;
+    /* margin: 0 0 8px 0; */
     line-height: 1.6;
+    color: #CCC4A9;
 }
 
 .more-info {
+    font-size: 14px;
+    font-weight: 200;
     color: #F5EBC9;
     text-decoration: underline;
 }
@@ -202,28 +259,31 @@
 /* Right Column - Order Box */
 .order-box {
     position: sticky;
+    width: 270px;
     top: 96px;
-    padding: 24px;
+    padding: 16px;
+    gap: 32px;
     border: 0.5px solid #F5EBC9;
     border-radius: 16px;
     height: fit-content;
 }
 
-.order-box h3 {
-    font-size: 16px;
-    margin-bottom: 16px;
+.order-box h5 {
+    font-size: 14px;
+    margin-bottom: 32px;
 }
 
 .selected-variants {
     font-size: 14px;
-    margin-bottom: 16px;
+    color: #CCC4A9;
+    margin-bottom: 32px;
 }
 
 .quantity-selector {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .qty-btn {
@@ -234,6 +294,29 @@
     background: transparent;
     color: #F5EBC9;
     cursor: pointer;
+    position: relative;
+}
+
+.qty-btn span {
+    position: absolute;
+    background: #F5EBC9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.qty-btn.minus span {
+    width: 16px;
+    height: 2px;
+}
+
+.qty-btn.plus span {
+    width: 16px;
+    height: 2px;
+}
+
+.qty-btn.plus span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .quantity-selector input {
@@ -249,13 +332,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+.subtotal span {
+    font-size: 14px;
+    margin: 0;
+}
+
+.subtotal .price {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
 }
 
 .marketplace-buttons {
     display: flex;
     gap: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 
 .marketplace-btn {
@@ -415,7 +509,7 @@
     .product-details-container {
         grid-template-columns: 1fr;
         padding: 0;
-        margin-top: 64px;
+        /* margin-top: 64px; */
         /* Add spacing between navbar and image */
     }
 
@@ -432,8 +526,8 @@
 
     .image-counter {
         display: block;
-        bottom: 24px;
-        left: 24px;
+        bottom: 32px;
+        left: 32px;
     }
 
     .thumbnail-grid {
@@ -441,19 +535,29 @@
     }
 
     .product-info {
-        padding: 32px;
+        padding: 0 32px 32px 32px;
+    }
+
+    .desktop-price {
+        display: none;
+    }
+
+    .mobile-price {
+        display: block;
+        font-size: 32px;
     }
 
     .order-box {
         position: fixed;
+        width: 100%;
         bottom: 0;
         left: 0;
         right: 0;
         top: auto;
         margin: 0;
         border: none;
-        border-radius: 0px 0px 0 0;
-        padding: 16px;
+        border-radius: 0 0;
+        padding: 12px 24px;
         background: #141414;
         z-index: 100;
         display: flex;
@@ -461,7 +565,7 @@
         gap: 8px;
     }
 
-    .order-box h3,
+    .order-box h5,
     .selected-variants,
     .quantity-selector,
     .subtotal {
@@ -504,16 +608,37 @@
 
     .product-details-container {
         margin-top: 64px;
+        gap: 24px;
         /* Slightly less spacing for mobile */
+    }
+
+
+
+    .image-counter {
+        display: block;
+        bottom: 24px;
+        left: 24px;
+    }
+
+    .mobile-price {
+        font-size: 24px;
+    }
+
+    .product-info {
+        padding: 0 24px 24px 24px;
+    }
+
+    .product-info h1 {
+        font-size: 18px;
     }
 
     .variant-options {
         flex-wrap: wrap;
     }
 
-    .variant-btn {
+    /* .variant-btn {
         flex: 1;
         min-width: calc(50% - 4px);
         text-align: center;
-    }
+    } */
 }

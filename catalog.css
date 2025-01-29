@@ -36,19 +36,20 @@
 
 /* Desktop Categories Sidebar */
 .desktop-categories {
-    width: 240px;
+    width: 232px;
     height: fit-content;
     padding: 24px;
     background: #242424;
+    border: #F5EBC9 0.5px solid;
     border-radius: 16px;
     position: sticky;
     top: 88px;
 }
 
-.desktop-categories h2 {
+/* .desktop-categories h2 {
     font-size: 24px;
     margin-bottom: 24px;
-}
+} */
 
 .desktop-categories ul {
     list-style: none;
@@ -58,6 +59,8 @@
 }
 
 .desktop-categories a {
+    font-size: 14px;
+    font-weight: 400;
     display: block;
     padding: 8px 16px;
     border-radius: 8px;
