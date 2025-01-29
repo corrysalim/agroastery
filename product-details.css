@@ -224,7 +224,7 @@
 
 .kategori a {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 300;
     color: #F5EBC9;
     text-decoration: underline;
 }
@@ -251,7 +251,7 @@
 
 .more-info {
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 300;
     color: #F5EBC9;
     text-decoration: underline;
 }
@@ -259,6 +259,9 @@
 /* Right Column - Order Box */
 .order-box {
     position: sticky;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
     width: 270px;
     top: 96px;
     padding: 16px;
@@ -270,20 +273,20 @@
 
 .order-box h5 {
     font-size: 14px;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
 }
 
 .selected-variants {
     font-size: 14px;
     color: #CCC4A9;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
 }
 
 .quantity-selector {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
 }
 
 .qty-btn {
@@ -332,17 +335,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
+
 }
 
 .subtotal span {
     font-size: 14px;
+    font-weight: 400;
+    color: #CCC4A9;
     margin: 0;
 }
 
 .subtotal .price {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
+    color: #CCC4A9;
     margin: 0;
 }
 
@@ -367,7 +373,7 @@
     height: 24px;
 }
 
-.buy-now-btn {
+.buy-now-btn-desktop {
     width: 100%;
     height: 40px;
     background: #F5EBC9;
@@ -375,10 +381,24 @@
     border: none;
     border-radius: 24px;
     cursor: pointer;
+    display: block;
+}
+
+.buy-now-btn-mobile {
+    width: 100%;
+    height: 40px;
+    background: #F5EBC9;
+    color: #1A1A1A;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    display: none;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 /* Order Modal */
-.order-modal-overlay {
+.desktop-order-form-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -389,47 +409,80 @@
     z-index: 1000;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.order-modal-overlay.active {
+.desktop-order-form-overlay.active {
     display: flex;
+    opacity: 1;
+    visibility: visible;
 }
 
-.order-modal {
+/* Desktop Order Form Modal */
+.desktop-order-form-modal {
     width: 662px;
+    max-height: 100vh;
     background: #1A1A1A;
-    border-radius: 16px;
-    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
-.modal-header {
+/* Modal Header */
+.desktop-order-form-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    height: 56px;
+    padding: 0 24px;
 }
 
-.modal-header h2 {
+.desktop-order-form-header h2 {
     font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #CCC4A9;
+    padding: 0;
 }
 
-.close-modal {
+.close-desktop-order-form {
     background: none;
     border: none;
     cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.close-desktop-order-form img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Modal Content */
+.desktop-order-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    overflow-y: auto;
 }
 
 .selected-product {
     display: flex;
+    align-items: end;
     gap: 16px;
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid rgba(245, 235, 201, 0.25);
 }
 
 .selected-product img {
     width: 64px;
     height: 64px;
+    background-color: #242424;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -440,19 +493,21 @@
 
 .product-details .variants {
     font-size: 14px;
+    font-weight: 300;
+    color: #CCC4A9;
     margin-bottom: 4px;
 }
 
 .product-details .price {
     font-size: 16px;
-    margin: 0;
+    font-weight: 600;
+    color: #CCC4A9;
 }
 
 .order-form {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin-bottom: 24px;
 }
 
 .form-group {
@@ -475,14 +530,28 @@
 }
 
 .form-group textarea {
-    height: 100px;
+    height: 120px;
     resize: none;
 }
 
-.modal-footer {
+/* Modal Footer */
+.desktop-order-form-footer {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding: 12px 24px;
+    background-color: #141414;
+    border-radius: 0 0 12px 12px;
+}
+
+.modal-footer span {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.modal-footer .price {
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .order-now-btn {
@@ -496,8 +565,137 @@
     opacity: 0.5;
 }
 
+/* Variant Selection Modal */
+/* Mobile Variant Selection Modal */
+/* Modal Overlay */
+.mobile-variant-selection-overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-variant-selection-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Container */
+.mobile-variant-selection-modal {
+    width: 100%;
+    max-height: 100vh;
+    background: #1A1A1A;
+    border-radius: 12px 12px 0 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modal Header */
+.mobile-variant-selection-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    padding: 0 24px;
+    /* border-bottom: 1px solid rgba(245, 235, 201, 0.1); */
+}
+
+.mobile-variant-selection-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    padding: 0;
+    color: #CCC4A9;
+}
+
+/* Close Variant Modal Button */
+.close-variant-modal {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.close-variant-modal img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Modal Content */
+.mobile-order-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 16px 24px;
+    flex: 1;
+}
+
+/* Action Button */
+.proceed-to-order-btn {
+    width: 100%;
+    height: 40px;
+    padding: 12px;
+    background: #F5EBC9;
+    color: #1A1A1A;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+.proceed-to-order-btn:hover {
+    opacity: 0.9;
+}
+
+/* Mobile Order Modal */
+.mobile-order-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-order-modal-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Mobile/Tablet Responsive */
 @media screen and (max-width: 1023px) {
+    .buy-now-btn-desktop {
+        display: none;
+    }
+
+    .buy-now-btn-mobile {
+        flex: 2;
+        display: block;
+    }
+
     .page-header nav {
         padding: 20px 32px;
     }
@@ -565,6 +763,12 @@
         gap: 8px;
     }
 
+    .order-box-buttons {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+    }
+
     .order-box h5,
     .selected-variants,
     .quantity-selector,
@@ -577,7 +781,7 @@
         flex: 1;
     }
 
-    .buy-now-btn {
+    .buy-now-btn-desktop {
         flex: 2;
         margin: 0;
     }
@@ -596,6 +800,24 @@
 
 }
 
+/* Close Variant Modal Button */
+.close-variant-modal {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.close-variant-modal img {
+    width: 24px;
+    height: 24px;
+}
+
 /* Mobile Specific */
 @media screen and (max-width: 809px) {
     .page-header nav {
@@ -612,8 +834,6 @@
         /* Slightly less spacing for mobile */
     }
 
-
-
     .image-counter {
         display: block;
         bottom: 24px;
@@ -621,7 +841,7 @@
     }
 
     .mobile-price {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .product-info {
@@ -629,7 +849,7 @@
     }
 
     .product-info h1 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .variant-options {
@@ -642,3 +862,5 @@
         text-align: center;
     } */
 }
+
+P

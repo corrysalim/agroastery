@@ -10,6 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryLinks = document.querySelectorAll('.categories-modal a');
     const filterWrapper = document.querySelector('.filter-wrapper');
 
+    // Desktop Order Form Modal Elements
+    const buyNowBtnDesktop = document.querySelector('.buy-now-btn-desktop');
+    const buyNowBtnMobile = document.querySelector('.buy-now-btn-mobile');
+    const desktopOrderFormOverlay = document.querySelector('.desktop-order-form-overlay');
+    const closeDesktopOrderFormBtn = document.querySelector('.close-desktop-order-form');
+    const desktopOrderFormModal = document.querySelector('.desktop-order-form-modal');
+
+    // Mobile Product Variant Selection Modal Elements
+    const mobileVariantSelectionOverlay = document.querySelector('.mobile-variant-selection-overlay');
+    const closeVariantModalBtn = document.querySelector('.close-variant-modal');
+    const mobileVariantSelectionModal = document.querySelector('.mobile-variant-selection-modal');
+    const proceedToOrderBtn = document.querySelector('.proceed-to-order-btn');
+
+    // Mobile Order Form Modal Elements
+    const mobileOrderFormOverlay = document.querySelector('.mobile-order-form-overlay');
+    const closeMobileOrderFormBtn = document.querySelector('.close-mobile-order-form');
+    const mobileOrderFormModal = document.querySelector('.mobile-order-form-modal');
+
+
     // Navbar scroll effect
     window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
@@ -102,5 +121,68 @@ document.addEventListener('DOMContentLoaded', () => {
             categoriesOverlay.classList.remove('active');
             document.body.style.overflow = '';
         }
+
+        // Close modals when clicking outside
+        if (desktopOrderFormOverlay &&
+            !desktopOrderFormModal?.contains(e.target) &&
+            !buyNowBtnDesktop?.contains(e.target)) {
+            desktopOrderFormOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (mobileVariantSelectionOverlay &&
+            !mobileVariantSelectionModal?.contains(e.target) &&
+            !buyNowBtnMobile?.contains(e.target)) {
+            mobileVariantSelectionOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (mobileOrderFormOverlay &&
+            !mobileOrderFormModal?.contains(e.target)) {
+            mobileOrderFormOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
+
+    // Desktop Order Modal Functionality
+    if (buyNowBtnDesktop && desktopOrderFormOverlay && closeDesktopOrderFormBtn) {
+        buyNowBtnDesktop.addEventListener('click', () => {
+            desktopOrderFormOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeDesktopOrderFormBtn.addEventListener('click', () => {
+            desktopOrderFormOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Variant Modal Functionality
+    if (buyNowBtnMobile && mobileVariantSelectionOverlay && closeVariantModalBtn) {
+        buyNowBtnMobile.addEventListener('click', () => {
+            mobileVariantSelectionOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeVariantModalBtn.addEventListener('click', () => {
+            mobileVariantSelectionOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Proceed to Order Button
+        if (proceedToOrderBtn) {
+            proceedToOrderBtn.addEventListener('click', () => {
+                mobileVariantSelectionOverlay.classList.remove('active');
+                mobileOrderFormOverlay.classList.add('active');
+            });
+        }
+    }
+
+    // Mobile Order Modal Functionality
+    if (mobileOrderFormOverlay && closeMobileOrderFormBtn) {
+        closeMobileOrderFormBtn.addEventListener('click', () => {
+            mobileOrderFormOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
 });

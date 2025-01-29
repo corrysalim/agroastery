@@ -122,64 +122,113 @@
                 <span>Subtotal</span>
                 <span class="price">Rp12.000.000</span>
             </div>
+            <div class="order-box-buttons">
+                <div class="marketplace-buttons">
+                    <a href="https://www.tokopedia.com/agroastery" target="_blank" class="marketplace-btn tokopedia">
+                        <img src="assets/svgs/tokopedia.svg" alt="Tokopedia">
+                    </a>
+                    <a href="https://shopee.co.id/agroastery" target="_blank" class="marketplace-btn shopee">
+                        <img src="assets/svgs/shopee.svg" alt="Shopee">
+                    </a>
+                </div>
 
-            <div class="marketplace-buttons">
-                <a href="#" class="marketplace-btn shopee">
-                    <img src="assets/svgs/shopee.svg" alt="Shopee">
-                </a>
-                <a href="#" class="marketplace-btn tokopedia">
-                    <img src="assets/svgs/tokopedia.svg" alt="Tokopedia">
-                </a>
+                <button class="buy-now-btn-desktop">Beli Langsung</button>
+                <button class="buy-now-btn-mobile">Beli Langsung</button>
+
             </div>
-
-            <button class="buy-now-btn">Beli Langsung</button>
         </div>
     </main>
 
-    <!-- Order Modal -->
-    <div class="order-modal-overlay">
-        <div class="order-modal">
-            <div class="modal-header">
+    <!-- Desktop Order Form Modal -->
+    <div class="desktop-order-form-overlay">
+        <div class="desktop-order-form-modal">
+            <div class="desktop-order-form-header">
                 <h2>Detail penerima</h2>
-                <button class="close-modal">
+                <button class="close-desktop-order-form" aria-label="Close">
                     <img src="assets/svgs/close_24dp_F5EBC9_FILL0_wght100_GRAD200_opsz24.svg" alt="Close">
                 </button>
             </div>
+            <div class="desktop-order-form-content">
+                <div class="selected-product">
+                    <img src="assets/images/standard-gayo-arabica.png" alt="Selected Product">
+                    <div class="product-details">
+                        <div class="variants">1kg, Beans</div>
+                        <div class="price">Rp120.000</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <button class="qty-btn minus"><span></span></button>
+                        <input type="number" value="100" min="1">
+                        <button class="qty-btn plus">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
 
-            <div class="selected-product">
-                <img src="assets/images/standard-gayo.png" alt="Selected Product">
-                <div class="product-details">
-                    <div class="variants">1kg, Beans</div>
-                    <div class="price">Rp120.000</div>
-                </div>
-                <div class="quantity-selector">
-                    <button class="qty-btn minus">-</button>
-                    <input type="number" value="100" min="1">
-                    <button class="qty-btn plus">+</button>
-                </div>
+                <form class="order-form">
+                    <div class="form-group">
+                        <label for="name">Nama Penerima</label>
+                        <input type="text" id="name" placeholder="Nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Nomor Penerima</label>
+                        <input type="tel" id="phone" placeholder="Nomor handphone">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Alamat</label>
+                        <textarea id="address" placeholder="Alamat lengkap.."></textarea>
+                    </div>
+                </form>
             </div>
-
-            <form class="order-form">
-                <div class="form-group">
-                    <label for="name">Nama Penerima</label>
-                    <input type="text" id="name" placeholder="Nama lengkap">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Nomor Penerima</label>
-                    <input type="tel" id="phone" placeholder="Nomor handphone">
-                </div>
-                <div class="form-group">
-                    <label for="address">Alamat</label>
-                    <textarea id="address" placeholder="Alamat lengkap.."></textarea>
-                </div>
-            </form>
-
-            <div class="modal-footer">
+            <div class="desktop-order-form-footer">
                 <div class="subtotal">
                     <span>Subtotal</span>
                     <span class="price">Rp12.000.000</span>
                 </div>
                 <button class="order-now-btn" disabled>Pesan Sekarang</button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Product Variant Selection Modal -->
+    <div class="mobile-variant-selection-overlay">
+        <div class="mobile-variant-selection-modal">
+            <div class="mobile-variant-selection-header">
+                <h2>Varian Produk</h2>
+                <button class="close-variant-modal">
+                    <img src="assets/svgs/close_24dp_F5EBC9_FILL0_wght100_GRAD200_opsz24.svg" alt="Close">
+                </button>
+            </div>
+            <div class="mobile-order-form-content">
+                <div class="selected-product">
+                    <img src="assets/images/standard-gayo-arabica.png" alt="Selected Product">
+                    <div class="product-details">
+                        <div class="variants">1kg, Beans</div>
+                        <div class="price">Rp120.000</div>
+                    </div>
+                </div>
+
+                <div class="variants-wrapper">
+                    <div class="variant-section">
+                        <h3>Pilih ukuran:</h3>
+                        <div class="variant-options">
+                            <button class="variant-btn">100g</button>
+                            <button class="variant-btn">500g</button>
+                            <button class="variant-btn active">1kg</button>
+                        </div>
+                    </div>
+                    <div class="variant-section">
+                        <h3>Pilih grind level:</h3>
+                        <div class="variant-options">
+                            <button class="variant-btn active">Beans</button>
+                            <button class="variant-btn">Grind Fine</button>
+                            <button class="variant-btn">Grind Medium</button>
+                            <button class="variant-btn">Grind Course</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="desktop-order-form-footer">
+                <button class="proceed-to-order-btn">Beli Langsung</button>
             </div>
         </div>
     </div>

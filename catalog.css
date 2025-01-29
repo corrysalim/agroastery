@@ -183,6 +183,7 @@
     left: 0;
     right: 0;
     padding: 0 24px 24px 24px;
+    border-radius: 12px 12px 0 0;
     background-color: #1A1A1A;
     transition: transform 0.3s ease;
 }
