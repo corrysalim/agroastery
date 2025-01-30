@@ -22,6 +22,7 @@
                 <span></span>
             </button>
             <div class="nav-links-container">
+                <a class="mobile-links" href="index.html" rel="noopener noreferrer">Home</a>
                 <a class="mobile-links" href="catalog.html" rel="noopener noreferrer">Katalog</a>
                 <a class="mobile-links" href="https://www.tokopedia.com/agroastery" target="_blank"
                     rel="noopener noreferrer">Tokopedia</a>
@@ -35,11 +36,8 @@
                     rel="noopener noreferrer">Instagram</a>
                 <a class="mobile-links" href="https://www.tiktok.com/@agroastery" target="_blank"
                     rel="noopener noreferrer">Tiktok</a>
-                <a class="mobile-links" href="https://tokopedia.link/zgnhwfsWtPb" target="_blank"
-                    rel="noopener noreferrer">Double Espresso</a>
-                <a class="mobile-links"
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfLp_b2qqdDm_tZ4OQuVuosyWSLYb6xJV6J2_Nhyn_sz4qe_g/viewform?usp=dialog"
-                    target="_blank" rel="noopener noreferrer">Lowongan Kerja</a>
+                <!-- <a class="mobile-links" href="https://tokopedia.link/zgnhwfsWtPb" target="_blank" rel="noopener noreferrer">Double Espresso</a> -->
+                <!-- <a class="mobile-links" href="https://docs.google.com/forms/d/e/1FAIpQLSfLp_b2qqdDm_tZ4OQuVuosyWSLYb6xJV6J2_Nhyn_sz4qe_g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Lowongan Kerja</a> -->
             </div>
         </nav>
     </header>
@@ -118,7 +116,7 @@
                 <button class="qty-btn plus"><span></span><span></span></button>
             </div>
 
-            <div class="subtotal">
+            <div class="subtotal-price">
                 <span>Subtotal</span>
                 <span class="price">Rp12.000.000</span>
             </div>
@@ -139,7 +137,7 @@
         </div>
     </main>
 
-    <!-- Desktop Order Form Modal -->
+    <!-- Desktop Order Form Modal -------------------------------------------------------- -->
     <div class="desktop-order-form-overlay">
         <div class="desktop-order-form-modal">
             <div class="desktop-order-form-header">
@@ -181,7 +179,7 @@
                 </form>
             </div>
             <div class="desktop-order-form-footer">
-                <div class="subtotal">
+                <div class="subtotal-price">
                     <span>Subtotal</span>
                     <span class="price">Rp12.000.000</span>
                 </div>
@@ -189,7 +187,7 @@
             </div>
         </div>
     </div>
-    <!-- Mobile Product Variant Selection Modal -->
+    <!-- Mobile Product Variant Selection Modal -------------------------------------------------------- -->
     <div class="mobile-variant-selection-overlay">
         <div class="mobile-variant-selection-modal">
             <div class="mobile-variant-selection-header">
@@ -227,11 +225,65 @@
                     </div>
                 </div>
             </div>
-            <div class="desktop-order-form-footer">
+            <div class="mobile-order-form-footer">
                 <button class="proceed-to-order-btn">Beli Langsung</button>
             </div>
         </div>
     </div>
+    <!-- Mobile Order Form Modal -------------------------------------------------------- -->
+    <div class="mobile-order-form-overlay">
+        <div class="mobile-order-form-modal">
+            <div class="mobile-order-form-header">
+                <a href="#" class="back-nav">
+                    <img src="assets/svgs/arrow_back_24dp_F5EBC9_FILL1_wght100_GRAD200_opsz24.svg" alt="Back">
+                    <span>Detail penerima</span>
+                </a>
+                <button class="close-mobile-order-form" aria-label="Close">
+                    <img src="assets/svgs/close_24dp_F5EBC9_FILL0_wght100_GRAD200_opsz24.svg" alt="Close">
+                </button>
+            </div>
+            <div class="mobile-order-form-content">
+                <div class="selected-product">
+                    <img src="assets/images/standard-gayo-arabica.png" alt="Selected Product">
+                    <div class="product-details">
+                        <div class="variants">1kg, Beans</div>
+                        <div class="price">Rp120.000</div>
+                    </div>
+                    <div class="quantity-selector">
+                        <button class="qty-btn minus"><span></span></button>
+                        <input type="number" value="100" min="1">
+                        <button class="qty-btn plus">
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Check for for, type, and id attributes for the form elements -->
+                <form class="order-form">
+                    <div class="form-group">
+                        <label for="mobile-name">Nama Penerima</label>
+                        <input type="text" id="mobile-name" placeholder="Nama lengkap">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile-phone">Nomor Penerima</label>
+                        <input type="tel" id="mobile-phone" placeholder="Nomor handphone">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile-address">Alamat</label>
+                        <textarea id="mobile-address" placeholder="Alamat lengkap.."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="desktop-order-form-footer">
+                <div class="subtotal-price">
+                    <span>Subtotal</span>
+                    <span class="price">Rp12.000.000</span>
+                </div>
+                <button class="order-now-btn" disabled>Pesan Sekarang</button>
+            </div>
+        </div>
+    </div>
+
     </main>
 </body>
 
