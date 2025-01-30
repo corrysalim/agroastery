@@ -69,6 +69,8 @@
 
 .page-title {
     font-size: 16px;
+    font-weight: 600;
+    color: #CCC4A9;
     /* margin-left: 8px; */
 }
 
@@ -103,7 +105,7 @@
     color: #F5EBC9;
     padding: 4px 8px;
     border: 0.5px solid #F5EBC9;
-    border-radius: 12px;
+    border-radius: 8px;
     display: none;
 }
 
@@ -273,7 +275,6 @@
     width: 270px;
     top: 96px;
     padding: 16px;
-    gap: 32px;
     border: 0.5px solid #F5EBC9;
     border-radius: 16px;
     height: fit-content;
@@ -526,6 +527,9 @@
 
 .form-group label {
     font-size: 14px;
+    font-weight: 600;
+    color: #CCC4A9;
+
 }
 
 .form-group input,
@@ -535,6 +539,25 @@
     border: none;
     border-radius: 8px;
     color: #F5EBC9;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    background: #2A2A2A;
+    box-shadow: 0 0 0 0.5px rgba(245, 235, 201, 1);
+}
+
+.form-group input::selection,
+.form-group textarea::selection {
+    background: rgba(245, 235, 201, 0.2);
+    color: #F5EBC9;
+}
+
+
+.form-group input {
+    height: 48px;
 }
 
 .form-group textarea {
@@ -550,6 +573,11 @@
     padding: 16px 24px;
     background-color: #141414;
     border-radius: 0 0 12px 12px;
+}
+
+.desktop-order-form-footer .order-now-btn {
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .modal-footer span {
@@ -875,24 +903,6 @@
         overflow-y: auto;
     }
 
-}
-
-/* Close Variant Modal Button */
-.close-variant-modal {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-}
-
-.close-variant-modal img {
-    width: 24px;
-    height: 24px;
 }
 
 /* Mobile Specific */
