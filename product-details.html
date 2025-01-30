@@ -13,10 +13,12 @@
 <body>
     <header class="page-header">
         <nav>
+            <div class="back-and-page-title">
             <a href="catalog.html" class="back-nav">
                 <img src="assets/svgs/arrow_back_24dp_F5EBC9_FILL1_wght100_GRAD200_opsz24.svg" alt="Back">
-                <span>Detail produk</span>
             </a>
+            <span class="page-title">Detail produk</span>
+            </div>
             <button class="hamburger" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -234,13 +236,35 @@
     <div class="mobile-order-form-overlay">
         <div class="mobile-order-form-modal">
             <div class="mobile-order-form-header">
-                <a href="#" class="back-nav">
+                <!-- <a href="product-details.html" class="back-nav">
                     <img src="assets/svgs/arrow_back_24dp_F5EBC9_FILL1_wght100_GRAD200_opsz24.svg" alt="Back">
-                    <span>Detail penerima</span>
-                </a>
-                <button class="close-mobile-order-form" aria-label="Close">
+                </a> -->
+                <span class="page-title">Detail penerima</span>
+                <!-- Hamburger 2 on mobile form modal -->
+                <div class="nav-links-container">
+                    <a class="mobile-links" href="index.html" rel="noopener noreferrer">Home</a>
+                    <a class="mobile-links" href="catalog.html" rel="noopener noreferrer">Katalog</a>
+                    <a class="mobile-links" href="https://www.tokopedia.com/agroastery" target="_blank"
+                        rel="noopener noreferrer">Tokopedia</a>
+                    <a class="mobile-links" href="https://shopee.co.id/agroastery" target="_blank"
+                        rel="noopener noreferrer">Shopee</a>
+                    <a class="mobile-links" href="https://api.whatsapp.com/send?phone=628979092726" target="_blank"
+                        rel="noopener noreferrer">WhatsApp</a>
+                    <a class="mobile-links" href="https://t.me/agroastery" target="_blank"
+                        rel="noopener noreferrer">Telegram</a>
+                    <a class="mobile-links" href="https://www.instagram.com/agroastery/" target="_blank"
+                        rel="noopener noreferrer">Instagram</a>
+                    <a class="mobile-links" href="https://www.tiktok.com/@agroastery" target="_blank"
+                        rel="noopener noreferrer">Tiktok</a>
+                    <!-- <a class="mobile-links" href="https://tokopedia.link/zgnhwfsWtPb" target="_blank" rel="noopener noreferrer">Double Espresso</a> -->
+                    <!-- <a class="mobile-links" href="https://docs.google.com/forms/d/e/1FAIpQLSfLp_b2qqdDm_tZ4OQuVuosyWSLYb6xJV6J2_Nhyn_sz4qe_g/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Lowongan Kerja</a> -->
+                </div>
+                <button class="close-mobile-order-form">
                     <img src="assets/svgs/close_24dp_F5EBC9_FILL0_wght100_GRAD200_opsz24.svg" alt="Close">
                 </button>
+                <!-- <button class="close-mobile-order-form" aria-label="Close">
+                    <img src="assets/svgs/close_24dp_F5EBC9_FILL0_wght100_GRAD200_opsz24.svg" alt="Close">
+                </button> -->
             </div>
             <div class="mobile-order-form-content">
                 <div class="selected-product">
@@ -261,16 +285,16 @@
                 <!-- Check for for, type, and id attributes for the form elements -->
                 <form class="order-form">
                     <div class="form-group">
-                        <label for="mobile-name">Nama Penerima</label>
-                        <input type="text" id="mobile-name" placeholder="Nama lengkap">
+                        <label for="name">Nama Penerima</label>
+                        <input type="text" id="name" placeholder="Nama lengkap">
                     </div>
                     <div class="form-group">
-                        <label for="mobile-phone">Nomor Penerima</label>
-                        <input type="tel" id="mobile-phone" placeholder="Nomor handphone">
+                        <label for="phone">Nomor Penerima</label>
+                        <input type="tel" id="phone" placeholder="Nomor handphone">
                     </div>
                     <div class="form-group">
-                        <label for="mobile-address">Alamat</label>
-                        <textarea id="mobile-address" placeholder="Alamat lengkap.."></textarea>
+                        <label for="address">Alamat</label>
+                        <textarea id="address" placeholder="Alamat lengkap.."></textarea>
                     </div>
                 </form>
             </div>

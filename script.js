@@ -82,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Product details functionality
     const initProductDetails = () => {
+        const navLinks = document.querySelector('.nav-links-container');
+
         // Desktop order form
         const buyNowBtnDesktop = document.querySelector('.buy-now-btn-desktop');
         const desktopOrderFormOverlay = document.querySelector('.desktop-order-form-overlay');
@@ -131,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Proceed button clicked');
                 mobileVariantSelectionOverlay.classList.remove('active');
                 mobileOrderFormOverlay.classList.add('active');
+                navLinks.classList.add('active');
             });
         }
 
