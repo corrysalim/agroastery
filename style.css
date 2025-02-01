@@ -161,6 +161,7 @@ nav {
 
 .page-header.scrolled {
     background-color: rgba(26, 26, 26, 0.2);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
 
