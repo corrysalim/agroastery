@@ -534,6 +534,7 @@
 
 .form-group input,
 .form-group textarea {
+    font-size: 14px;
     padding: 12px;
     background: #242424;
     border: none;
