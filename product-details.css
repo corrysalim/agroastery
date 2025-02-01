@@ -904,6 +904,10 @@
         overflow-y: auto;
     }
 
+    .footer-section {
+        padding-bottom: 72px;
+    }
+
 }
 
 /* Mobile Specific */
