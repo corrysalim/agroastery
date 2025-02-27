@@ -105,7 +105,7 @@
 }
 
 /* Reuse your existing quantity selector styles */
-.quantity-selector {
+.stepper {
     display: flex;
     align-items: center;
     gap: 8px;
